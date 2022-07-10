@@ -55,33 +55,38 @@ class ViewController: UIViewController {
             numberScreen.text = ""
         }
     }
-
+    
     func restartGame() {
         outNumberScreen.text = nil
         computerNumber = game.makeNumber()
         count = 0
     }
+    
     //функция формирующая результат поиска числа
     func preparingResult(_ bull: Int,_ cow: Int,_ userNumber: String) -> String {
         if bull == 4 {
             count += 1
-            let alert = UIAlertController(
-                title: "Игра окончена",
-                message: "Вы угадали число за \(count) попыток",
-                preferredStyle: .alert)
-
-            alert.addAction(UIAlertAction(title: "Начать заново",
-                                          style: .default,
-                                          handler: { _ in
-                self.restartGame()
-            }))
-
-            self.present(alert, animated: true, completion: nil)
+            gameNotification()
             return "\(userNumber) - \(bull) бык \(cow) коров\n Игра окончена"
         } else {
             count += 1
             return "\(userNumber) - \(bull) бык \(cow) коров"
         }
+    }
+    
+    func gameNotification () {
+        let alert = UIAlertController(
+            title: "Игра окончена",
+            message: "Вы угадали число за \(count) попыток",
+            preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Начать заново",
+                                      style: .default,
+                                      handler: { _ in
+            self.restartGame()
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

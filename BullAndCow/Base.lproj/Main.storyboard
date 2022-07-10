@@ -273,6 +273,104 @@
             </objects>
             <point key="canvasLocation" x="1128" y="65"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="o0F-zC-h15">
+            <objects>
+                <viewController id="Of1-vr-RRL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sx2-JD-KGL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="XGQ-js-9LE">
+                                <rect key="frame" x="10" y="54" width="394" height="36"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICH-45-RTI">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="36"/>
+                                        <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="На главную">
+                                            <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCq-0K-Ac4">
+                                        <rect key="frame" x="232" y="0.0" width="162" height="36"/>
+                                        <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Новая игра">
+                                            <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ура!  Вы победили!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjc-LB-Brr">
+                                <rect key="frame" x="20" y="270" width="374" height="109"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
+                                <color key="textColor" red="0.80297763879999995" green="0.088085906290000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="a3B-iw-ZQL">
+                                <rect key="frame" x="10" y="764" width="394" height="58"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="l7P-dQ-i7R">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="22"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текущий" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNG-bp-CJY">
+                                                <rect key="frame" x="0.0" y="0.0" width="162" height="22"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                                <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Глобальный" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEN-hn-y6x">
+                                                <rect key="frame" x="232" y="0.0" width="162" height="22"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="df5-fe-GB2">
+                                        <rect key="frame" x="0.0" y="22" width="394" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9t-yD-alq">
+                                                <rect key="frame" x="0.0" y="0.0" width="162" height="36"/>
+                                                <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Ходы">
+                                                    <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7D-Bh-v7E">
+                                                <rect key="frame" x="232" y="0.0" width="162" height="36"/>
+                                                <color key="tintColor" systemColor="systemRedColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Поделиться">
+                                                    <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Zsu-DO-cQF"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="Zsu-DO-cQF" firstAttribute="trailing" secondItem="bjc-LB-Brr" secondAttribute="trailing" constant="20" id="5dk-UN-Xz1"/>
+                            <constraint firstItem="XGQ-js-9LE" firstAttribute="leading" secondItem="Zsu-DO-cQF" secondAttribute="leading" constant="10" id="6gO-BF-oqO"/>
+                            <constraint firstItem="bjc-LB-Brr" firstAttribute="top" secondItem="XGQ-js-9LE" secondAttribute="bottom" constant="180" id="BsB-EI-c91"/>
+                            <constraint firstItem="XGQ-js-9LE" firstAttribute="top" secondItem="Zsu-DO-cQF" secondAttribute="top" constant="10" id="Dhj-gy-ptJ"/>
+                            <constraint firstItem="Zsu-DO-cQF" firstAttribute="bottom" secondItem="a3B-iw-ZQL" secondAttribute="bottom" constant="40" id="IhY-LC-E6z"/>
+                            <constraint firstItem="bjc-LB-Brr" firstAttribute="leading" secondItem="Zsu-DO-cQF" secondAttribute="leading" constant="20" id="MdA-KL-Rgi"/>
+                            <constraint firstAttribute="trailing" secondItem="a3B-iw-ZQL" secondAttribute="trailing" constant="10" id="Sht-YQ-Odv"/>
+                            <constraint firstItem="Zsu-DO-cQF" firstAttribute="trailing" secondItem="XGQ-js-9LE" secondAttribute="trailing" constant="10" id="Xba-Yw-Xp2"/>
+                            <constraint firstItem="a3B-iw-ZQL" firstAttribute="leading" secondItem="Zsu-DO-cQF" secondAttribute="leading" constant="10" id="mfi-cQ-vuh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j4L-yK-t7f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1127.536231884058" y="753.34821428571422"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="iud-d0-Agx">
             <objects>
@@ -298,6 +396,9 @@
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
