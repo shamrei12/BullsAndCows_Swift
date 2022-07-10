@@ -35,8 +35,7 @@ class ViewController: UIViewController {
     @IBAction func buttonsNumber(_ sender: UIButton) {
         if numberScreen.text!.count < 4{
             numberScreen.text = numberScreen.text! + String(sender.tag)
-        }
-        else{
+        } else{
             sender.isEnabled = false
         }
     }
