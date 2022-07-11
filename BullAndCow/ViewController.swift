@@ -51,6 +51,7 @@ class ViewController: UIViewController {
         let user = numberScreen.text!
         if sender.tag == 11 && user.count == 4 {
             outNumberScreen.text = outNumberScreen.text! + "\n\(result)"
+            numberScreen.text = ""
         } else {
             numberScreen.text = ""
         }
