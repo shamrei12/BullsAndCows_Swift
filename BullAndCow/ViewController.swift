@@ -33,10 +33,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonsNumber(_ sender: UIButton) {
-        if numberScreen.text!.count < 4{
+        if numberScreen.text!.count < 4 {
             numberScreen.text = numberScreen.text! + String(sender.tag)
-        } else{
-            sender.isEnabled = false
         }
     }
     
@@ -60,17 +58,21 @@ class ViewController: UIViewController {
     func restartGame() {
         outNumberScreen.text = nil
         computerNumber = game.makeNumber()
-        count = 0
+        game.count = 0
     }
     
     //функция формирующая результат поиска числа
     func preparingResult(_ bull: Int,_ cow: Int,_ userNumber: String) -> String {
         if bull == 4 {
-            count += 1
+            game.count += 1
+            count = game.count
+//            showResult()
             gameNotification()
+            self.restartGame()
+
             return "\(userNumber) - \(bull) бык \(cow) коров\n Игра окончена"
         } else {
-            count += 1
+            game.count += 1
             return "\(userNumber) - \(bull) бык \(cow) коров"
         }
     }
@@ -78,7 +80,7 @@ class ViewController: UIViewController {
     func gameNotification () {
         let alert = UIAlertController(
             title: "Игра окончена",
-            message: "Вы угадали число за \(count) попыток",
+            message: "Вы угадали число за \(game.count) попыток",
             preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Начать заново",
@@ -89,5 +91,15 @@ class ViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func showResult() {
+        // загрузка Storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        // загрузка View Controller и его сцены со Storyboard
+        let viewController = storyboard.instantiateViewController(identifier:
+        "ResultViewController")
+        viewController.modalPresentationStyle = .fullScreen
+        // отображение сцены на экране
+        self.present(viewController, animated: true, completion: nil)
+    }
 }
-

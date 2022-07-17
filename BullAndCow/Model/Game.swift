@@ -16,7 +16,7 @@
 ////
 
 class Game {
-    var count: Int
+    var count: Int = 0
     
     init(count: Int) {
         self.count = count
@@ -31,6 +31,7 @@ class Game {
         for i in mainDig {
             result.append(i)
         }
+        print(result)
         return result
     }
     

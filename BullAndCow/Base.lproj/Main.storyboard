@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--View Controller-->
         <scene sceneID="5jv-cG-ch6">
             <objects>
-                <viewController id="KIZ-RH-5Wd" customClass="MainViewController" customModule="BullAndCow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="KIZ-RH-5Wd" customClass="ViewController" customModule="BullAndCow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wlQ-Ft-aH8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -271,12 +271,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1128" y="65"/>
+            <point key="canvasLocation" x="1128" y="64"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="o0F-zC-h15">
             <objects>
-                <viewController id="Of1-vr-RRL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultViewController" id="Of1-vr-RRL" customClass="ResultViewController" customModule="BullAndCow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sx2-JD-KGL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -299,6 +299,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Новая игра">
                                             <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="newGame:" destination="Of1-vr-RRL" eventType="touchUpInside" id="pk0-c9-Db2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -366,6 +369,9 @@
                             <constraint firstItem="a3B-iw-ZQL" firstAttribute="leading" secondItem="Zsu-DO-cQF" secondAttribute="leading" constant="10" id="mfi-cQ-vuh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="newScore" destination="jNG-bp-CJY" id="Ub0-ST-6Af"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4L-yK-t7f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
