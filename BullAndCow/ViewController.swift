@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         game = Game(count: count)
         computerNumber = game.makeNumber()
     }
-    
+
     func сomparingNumber(_ userSent: String) -> String {
         let userNumber = Array(userSent).map{Int(String($0))!}
         if game.uniqueNumber(userNumber) {
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func Send(_ sender: UIButton){
+    @IBAction func Send(_ sender: UIButton) {
         lazy var result = сomparingNumber(numberScreen.text!)
         let user = numberScreen.text!
         if sender.tag == 11 && user.count == 4 {
@@ -56,7 +56,6 @@ class ViewController: UIViewController {
     }
     
     func restartGame() {
-        outNumberScreen.text = nil
         computerNumber = game.makeNumber()
         game.count = 0
     }
@@ -69,7 +68,6 @@ class ViewController: UIViewController {
             showResult()
 //            gameNotification()
             self.restartGame()
-
             return "\(userNumber) - \(bull) бык \(cow) коров\n Игра окончена"
         } else {
             game.count += 1
@@ -103,10 +101,11 @@ class ViewController: UIViewController {
         // загрузка Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         // загрузка View Controller и его сцены со Storyboard
-        let viewController = storyboard.instantiateViewController(identifier:
-        "ResultViewController")
-        viewController.modalPresentationStyle = .fullScreen
+        guard let resultViewController = storyboard.instantiateViewController(identifier: "ResultViewController") as? ResultViewController else { return }
+        resultViewController.modalPresentationStyle = .fullScreen
+        resultViewController.count = game.count
         // отображение сцены на экране
-        self.present(viewController, animated: true, completion: nil)
+        self.present(resultViewController, animated: true, completion: nil)
     }
+
 }
