@@ -66,8 +66,8 @@ class ViewController: UIViewController {
         if bull == 4 {
             game.count += 1
             count = game.count
-//            showResult()
-            gameNotification()
+            showResult()
+//            gameNotification()
             self.restartGame()
 
             return "\(userNumber) - \(bull) бык \(cow) коров\n Игра окончена"
@@ -77,20 +77,27 @@ class ViewController: UIViewController {
         }
     }
     
-    func gameNotification () {
-        let alert = UIAlertController(
-            title: "Игра окончена",
-            message: "Вы угадали число за \(game.count) попыток",
-            preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Начать заново",
-                                      style: .default,
-                                      handler: { _ in
-            self.restartGame()
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
+    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
+
+
+//    func gameNotification () {
+//        let alert = UIAlertController(
+//            title: "Игра окончена",
+//            message: "Вы угадали число за \(game.count) попыток",
+//            preferredStyle: .alert)
+//
+//        alert.addAction(UIAlertAction(title: "Начать заново",
+//                                      style: .default,
+//                                      handler: { _ in
+//            self.restartGame()
+//        }))
+//
+//        self.present(alert, animated: true, completion: nil)
+//    }
+    
+
     
     func showResult() {
         // загрузка Storyboard

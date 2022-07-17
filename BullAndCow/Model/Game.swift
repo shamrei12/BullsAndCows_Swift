@@ -1,22 +1,8 @@
 //import Foundation
 //
-//protocol GameProtocol {
-//    //Количество ходов за раунд
-//    var count: Int { get }
-//    // Проверяет, закончена ли игра
-//    var isGameEnded: Bool { get }
-//    //Массив для сохранения числа сгенерированное функцией
-//    var computerNumber:[Int] { get }
-//    var userNumber: [String] { get }
-//    // Функция создания числа
-//    func makeNumber() -> [Int]
-//    // Функция для сравнения числа
-//    func сomparingNumber(_ userNumber: String) -> String
-//}
-////
 
-class Game {
-    var count: Int = 0
+class Game{
+    var count: Int
     
     init(count: Int) {
         self.count = count
@@ -50,7 +36,6 @@ class Game {
         }
         return (bull,cow)
     }
-    
     func uniqueNumber(_ userNumber: [Int]) -> Bool {
         var tempSet = Set<Int>()
         for userValue in userNumber {

@@ -8,7 +8,8 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-    @IBOutlet weak var newScore: UILabel!
+    var ViewController: ViewController?
+    @IBOutlet weak var newScore: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
