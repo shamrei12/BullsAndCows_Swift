@@ -10,16 +10,21 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var outNumberScreen: UITextView!
     @IBOutlet weak var numberScreen: UILabel!
+    @IBOutlet weak var backMenu: UIBarButtonItem!
     
     var computerNumber:[Int] = []
     var count: Int = 0
     var game: Game!
+    let titleLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         game = Game(count: count)
         computerNumber = game.makeNumber()
+        titleLabel.text = "00:00"
+        navigationItem.titleView = titleLabel
     }
+    
 
     func сomparingNumber(_ userSent: String) -> String {
         let userNumber = Array(userSent).map{Int(String($0))!}
@@ -29,7 +34,6 @@ class ViewController: UIViewController {
         } else {
             return "Некорректное число"
         }
-        
     }
     
     @IBAction func buttonsNumber(_ sender: UIButton) {
@@ -54,6 +58,7 @@ class ViewController: UIViewController {
             numberScreen.text = ""
         }
     }
+    
     
     func restartGame() {
         computerNumber = game.makeNumber()

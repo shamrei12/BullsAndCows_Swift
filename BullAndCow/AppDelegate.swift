@@ -17,8 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
-        let rootViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        rootViewController.game = Game(count: 0)
+        let rootViewController = storyboard.instantiateViewController(withIdentifier: "StartViewController") as! StartViewController
         navigationController.viewControllers = [rootViewController]
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()

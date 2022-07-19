@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="5jv-cG-ch6">
             <objects>
-                <viewController storyboardIdentifier="ViewController" modalPresentationStyle="fullScreen" id="KIZ-RH-5Wd" customClass="ViewController" customModule="BullAndCow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartViewController" modalPresentationStyle="fullScreen" id="KIZ-RH-5Wd" customClass="StartViewController" customModule="BullAndCow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wlQ-Ft-aH8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="z7x-B0-lOA" kind="show" id="z2E-Zt-uek"/>
+                                    <segue destination="z7x-B0-lOA" kind="show" identifier="mainSegue" id="z2E-Zt-uek"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Быки и  Коровы" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4T-QK-Iw4">
@@ -272,6 +272,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backMenu" destination="w3M-Er-q2o" id="ZXl-li-yjc"/>
                         <outlet property="numberScreen" destination="Mje-Ky-6P4" id="TtP-MD-YIA"/>
                         <outlet property="outNumberScreen" destination="NgC-aw-3Zb" id="jb8-qT-3Ie"/>
                     </connections>
@@ -387,7 +388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4L-yK-t7f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1291" y="1013"/>
+            <point key="canvasLocation" x="1722" y="909"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iud-d0-Agx">
@@ -430,7 +431,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="z2E-Zt-uek"/>
+        <segue reference="JTx-5k-ZMR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
