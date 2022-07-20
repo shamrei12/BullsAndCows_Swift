@@ -15,17 +15,22 @@ class ViewController: UIViewController {
     var computerNumber:[Int] = []
     var count: Int = 0
     var game: Game!
-    let titleLabel = UILabel()
+//    var recordCount: Int? = 0
+    var recordCount = UserDefaults.standard
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         game = Game(count: count)
         computerNumber = game.makeNumber()
-        titleLabel.text = "00:00"
-        navigationItem.titleView = titleLabel
+        recordCount.set(nil, forKey: "recordCount")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        restartGame()
     }
     
-
     func сomparingNumber(_ userSent: String) -> String {
         let userNumber = Array(userSent).map{Int(String($0))!}
         if game.uniqueNumber(userNumber) {
@@ -61,6 +66,7 @@ class ViewController: UIViewController {
     
     
     func restartGame() {
+        outNumberScreen.text = nil
         computerNumber = game.makeNumber()
         game.count = 0
     }
@@ -69,7 +75,6 @@ class ViewController: UIViewController {
     func preparingResult(_ bull: Int,_ cow: Int,_ userNumber: String) -> String {
         if bull == 4 {
             game.count += 1
-            count = game.count
             showResult()
 //            gameNotification()
             self.restartGame()
@@ -103,12 +108,19 @@ class ViewController: UIViewController {
 
     
     func showResult() {
-        // загрузка Storyboard
+        if recordCount.object(forKey: "recordCount") == nil {
+            recordCount.set(game.count, forKey: "recordCount")
+        } else if (recordCount.object(forKey: "recordCount") as? Int ?? 0) > game.count {
+            recordCount.set(game.count, forKey: "recordCount")
+        }
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         // загрузка View Controller и его сцены со Storyboard
         guard let resultViewController = storyboard.instantiateViewController(identifier: "ResultViewController") as? ResultViewController else { return }
         resultViewController.modalPresentationStyle = .fullScreen
         resultViewController.count = game.count
+        resultViewController.recordCount = recordCount.object(forKey: "recordCount") as? Int ?? 0
+        
         // отображение сцены на экране
         self.present(resultViewController, animated: true, completion: nil)
     }
