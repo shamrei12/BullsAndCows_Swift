@@ -282,6 +282,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backMenu" destination="w3M-Er-q2o" id="ZXl-li-yjc"/>
+                        <outlet property="labelStopwatch" destination="WA5-W1-K9B" id="x97-8e-V9U"/>
                         <outlet property="numberScreen" destination="Mje-Ky-6P4" id="TtP-MD-YIA"/>
                         <outlet property="outNumberScreen" destination="NgC-aw-3Zb" id="jb8-qT-3Ie"/>
                     </connections>
