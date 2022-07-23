@@ -36,6 +36,11 @@ class Game{
         }
         return (bull,cow)
     }
+    
+    func makeResult() {
+        
+    }
+    
     func uniqueNumber(_ userNumber: [Int]) -> Bool {
         var tempSet = Set<Int>()
         for userValue in userNumber {

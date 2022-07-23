@@ -17,6 +17,7 @@
 		D8769C14282800130002145C /* BullAndCowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8769C13282800130002145C /* BullAndCowUITests.swift */; };
 		D8769C16282800130002145C /* BullAndCowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8769C15282800130002145C /* BullAndCowUITestsLaunchTests.swift */; };
 		D8EB715C2885BE9E00AB857A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EB715B2885BE9E00AB857A /* StartViewController.swift */; };
+		D8EB7164288B13D700AB857A /* MoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EB7163288B13D700AB857A /* MoveViewController.swift */; };
 		D8F1BCDF2871E8B9000CBD57 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1BCDE2871E8B9000CBD57 /* Game.swift */; };
 		D8F1BCE02871E8B9000CBD57 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1BCDE2871E8B9000CBD57 /* Game.swift */; };
 		D8F1BCE12871E8B9000CBD57 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1BCDE2871E8B9000CBD57 /* Game.swift */; };
@@ -54,6 +55,7 @@
 		D8769C13282800130002145C /* BullAndCowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullAndCowUITests.swift; sourceTree = "<group>"; };
 		D8769C15282800130002145C /* BullAndCowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullAndCowUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D8EB715B2885BE9E00AB857A /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		D8EB7163288B13D700AB857A /* MoveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveViewController.swift; sourceTree = "<group>"; };
 		D8F1BCDE2871E8B9000CBD57 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 			children = (
 				D8F1BCDE2871E8B9000CBD57 /* Game.swift */,
 				D83CDEEF287C7B0D00203A26 /* ResultViewController.swift */,
+				D8EB7163288B13D700AB857A /* MoveViewController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				D8769BF3282800120002145C /* AppDelegate.swift in Sources */,
 				D8F1BCDF2871E8B9000CBD57 /* Game.swift in Sources */,
 				D8EB715C2885BE9E00AB857A /* StartViewController.swift in Sources */,
+				D8EB7164288B13D700AB857A /* MoveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,21 +462,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 285RFT4HL7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BullAndCow/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2.23.1;
 				PRODUCT_BUNDLE_IDENTIFIER = No.BullAndCow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -487,21 +493,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 285RFT4HL7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BullAndCow/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2.23.1;
 				PRODUCT_BUNDLE_IDENTIFIER = No.BullAndCow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

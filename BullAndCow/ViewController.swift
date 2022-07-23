@@ -26,19 +26,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         game = Game(count: count)
         computerNumber = game.makeNumber()
-        record.set(nil, forKey: "recordCount")
-        record.set(nil, forKey: "recordMinutes")
-        record.set(nil, forKey: "recordSeconds")
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         restartGame()
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         createTimer()
     }
+    
     func createTimer() {
         stopwatch = Timer.scheduledTimer(timeInterval: 1,
                                          target: self,
@@ -104,6 +99,7 @@ class ViewController: UIViewController {
     
     func restartGame() {
         outNumberScreen.text = nil
+        labelStopwatch.text = nil
         computerNumber = game.makeNumber()
         game.count = 0
         minutes = 0
@@ -128,22 +124,6 @@ class ViewController: UIViewController {
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-
-
-//    func gameNotification () {
-//        let alert = UIAlertController(
-//            title: "Игра окончена",
-//            message: "Вы угадали число за \(game.count) попыток",
-//            preferredStyle: .alert)
-//
-//        alert.addAction(UIAlertAction(title: "Начать заново",
-//                                      style: .default,
-//                                      handler: { _ in
-//            self.restartGame()
-//        }))
-//
-//        self.present(alert, animated: true, completion: nil)
-//    }
     
     func checkRecodTime() {
         if record.object(forKey: "recordMinutes") == nil && record.object(forKey: "recordSeconds") == nil {
@@ -165,6 +145,13 @@ class ViewController: UIViewController {
             record.set(game.count, forKey: "recordCount")
         }
     }
+    func toString (number: [Int]) -> String {
+        var str: String = ""
+        for i in number {
+            str += String(i)
+        }
+        return str
+    }
     
     func showResult() {
         checkRecodTime()
@@ -180,6 +167,8 @@ class ViewController: UIViewController {
         resultViewController.seconds = seconds
         resultViewController.recordMinutes = record.object(forKey: "recordMinutes") as? Int ?? 0
         resultViewController.recordSeconds = record.object(forKey: "recordSeconds") as? Int ?? 0
+        resultViewController.number = toString(number: computerNumber)
+  
         // отображение сцены на экране
         self.present(resultViewController, animated: true, completion: nil)
     }
