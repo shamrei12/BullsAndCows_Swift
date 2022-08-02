@@ -18,6 +18,7 @@
 		D8769C16282800130002145C /* BullAndCowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8769C15282800130002145C /* BullAndCowUITestsLaunchTests.swift */; };
 		D8EB715C2885BE9E00AB857A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EB715B2885BE9E00AB857A /* StartViewController.swift */; };
 		D8EB7164288B13D700AB857A /* MoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EB7163288B13D700AB857A /* MoveViewController.swift */; };
+		D8EB7167288C537E00AB857A /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EB7166288C537E00AB857A /* TimeManager.swift */; };
 		D8F1BCDF2871E8B9000CBD57 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1BCDE2871E8B9000CBD57 /* Game.swift */; };
 		D8F1BCE02871E8B9000CBD57 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1BCDE2871E8B9000CBD57 /* Game.swift */; };
 		D8F1BCE12871E8B9000CBD57 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1BCDE2871E8B9000CBD57 /* Game.swift */; };
@@ -56,6 +57,7 @@
 		D8769C15282800130002145C /* BullAndCowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullAndCowUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D8EB715B2885BE9E00AB857A /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		D8EB7163288B13D700AB857A /* MoveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveViewController.swift; sourceTree = "<group>"; };
+		D8EB7166288C537E00AB857A /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		D8F1BCDE2871E8B9000CBD57 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,11 +109,12 @@
 		D8769BF1282800120002145C /* BullAndCow */ = {
 			isa = PBXGroup;
 			children = (
+				D8EB7165288C536000AB857A /* Managers */,
 				D8F1BCE22871E93A000CBD57 /* Model */,
 				D8769BF2282800120002145C /* AppDelegate.swift */,
+				D8EB715B2885BE9E00AB857A /* StartViewController.swift */,
 				D8769BF6282800120002145C /* ViewController.swift */,
 				D8769BF8282800120002145C /* Main.storyboard */,
-				D8EB715B2885BE9E00AB857A /* StartViewController.swift */,
 				D8769BFB282800130002145C /* Assets.xcassets */,
 				D8769BFD282800130002145C /* LaunchScreen.storyboard */,
 				D8769C00282800130002145C /* Info.plist */,
@@ -134,6 +137,14 @@
 				D8769C15282800130002145C /* BullAndCowUITestsLaunchTests.swift */,
 			);
 			path = BullAndCowUITests;
+			sourceTree = "<group>";
+		};
+		D8EB7165288C536000AB857A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D8EB7166288C537E00AB857A /* TimeManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		D8F1BCE22871E93A000CBD57 /* Model */ = {
@@ -279,6 +290,7 @@
 			files = (
 				D83CDEF0287C7B0D00203A26 /* ResultViewController.swift in Sources */,
 				D8769BF7282800120002145C /* ViewController.swift in Sources */,
+				D8EB7167288C537E00AB857A /* TimeManager.swift in Sources */,
 				D8769BF3282800120002145C /* AppDelegate.swift in Sources */,
 				D8F1BCDF2871E8B9000CBD57 /* Game.swift in Sources */,
 				D8EB715C2885BE9E00AB857A /* StartViewController.swift in Sources */,

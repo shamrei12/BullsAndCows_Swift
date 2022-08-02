@@ -17,17 +17,16 @@ class ViewController: UIViewController {
     var count: Int = 0
     var game: Game!
     var stopwatch = Timer()
-    var record = UserDefaults.standard
     var seconds: Int = 0
-    var minutes: Int = 0
-
+    var record = UserDefaults.standard
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         game = Game(count: count)
         computerNumber = game.makeNumber()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         restartGame()
@@ -44,23 +43,8 @@ class ViewController: UIViewController {
     
     @objc func updateTimer() {
         seconds += 1
-        if seconds == 60{
-            minutes += 1
-            seconds = 0
-        }
-        if minutes < 10 && seconds < 10 {
-            labelStopwatch.text = "0\(minutes):0\(seconds)"
-        }
-        else if minutes < 10 && seconds >= 10 {
-            labelStopwatch.text = "0\(minutes):\(seconds)"
-        }
-        else if minutes >= 10 && seconds < 10 {
-            labelStopwatch.text = "\(minutes):0\(seconds)"
-        }
-        else if minutes >= 10 && seconds >= 10 {
-            labelStopwatch.text = "\(minutes):\(seconds)"
-        }
-       
+        labelStopwatch.text = TimeManager.shared.convertToMinutes(seconds: seconds)
+        
     }
     
     func сomparingNumber(_ userSent: String) -> String {
@@ -96,13 +80,11 @@ class ViewController: UIViewController {
         }
     }
     
-    
     func restartGame() {
         outNumberScreen.text = nil
         labelStopwatch.text = nil
         computerNumber = game.makeNumber()
         game.count = 0
-        minutes = 0
         seconds = 0
     }
     
@@ -112,8 +94,6 @@ class ViewController: UIViewController {
             stopwatch.invalidate()
             game.count += 1
             showResult()
-//            gameNotification()
-            self.restartGame()
             return "\(userNumber) - \(bull) бык \(cow) коров\n Игра окончена"
         } else {
             game.count += 1
@@ -126,15 +106,10 @@ class ViewController: UIViewController {
     }
     
     func checkRecodTime() {
-        if record.object(forKey: "recordMinutes") == nil && record.object(forKey: "recordSeconds") == nil {
-            record.set(minutes, forKey: "recordMinutes")
+        if record.object(forKey: "recordSeconds") == nil {
             record.set(seconds, forKey: "recordSeconds")
-        }
-        else if record.object(forKey: "recordMinutes") as? Int ?? 0 >= minutes {
-            if record.object(forKey: "recordSeconds") as? Int ?? 0 > seconds {
-                record.set(minutes, forKey: "recordMinutes")
-                record.set(seconds, forKey: "recordSeconds")
-            }
+        } else if record.object(forKey: "recordSeconds") as? Int ?? 0 > seconds {
+            record.set(seconds, forKey: "recordSeconds")
         }
     }
     
@@ -145,6 +120,7 @@ class ViewController: UIViewController {
             record.set(game.count, forKey: "recordCount")
         }
     }
+    
     func toString (number: [Int]) -> String {
         var str: String = ""
         for i in number {
@@ -156,21 +132,19 @@ class ViewController: UIViewController {
     func showResult() {
         checkRecodTime()
         checkRecordCount()
-    
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         // загрузка View Controller и его сцены со Storyboard
         guard let resultViewController = storyboard.instantiateViewController(identifier: "ResultViewController") as? ResultViewController else { return }
         resultViewController.modalPresentationStyle = .fullScreen
         resultViewController.count = game.count
         resultViewController.recordCount = record.object(forKey: "recordCount") as? Int ?? 0
-        resultViewController.minutes = minutes
         resultViewController.seconds = seconds
-        resultViewController.recordMinutes = record.object(forKey: "recordMinutes") as? Int ?? 0
         resultViewController.recordSeconds = record.object(forKey: "recordSeconds") as? Int ?? 0
         resultViewController.number = toString(number: computerNumber)
-  
+        
         // отображение сцены на экране
         self.present(resultViewController, animated: true, completion: nil)
     }
-
+    
 }

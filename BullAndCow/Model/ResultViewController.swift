@@ -16,35 +16,19 @@ class ResultViewController: UIViewController {
     var recordCount: Int? = 0
     var minutes: Int = 0
     var seconds: Int = 0
-    var recordMinutes: Int? = 0
     var recordSeconds: Int? = 0
     var number: String = ""
     
-    
     func createResult() -> String {
-        if minutes < 10 && seconds < 10 {
-            return "\(count) Ходов\n 0\(minutes):0\(seconds)"
-        }
-        else if minutes < 10 && seconds >= 10 {
-            return "\(count) Ходов\n 0\(minutes):\(seconds)"
-        }
-        else if minutes >= 10 && seconds < 10 {
-            return "\(count) Ходов\n \(minutes):0\(seconds)"
-        }
-        return "\(count) Ходов\n \(minutes):\(seconds)"
+        newScore?.font = UIFont(name: "Marker Felt Wide", size: 17)
+        let textTime = TimeManager.shared.convertToMinutes(seconds: seconds)
+        return "\(count) Ходов\n \(textTime)"
     }
     
     func createGlobalResult() -> String {
-        if recordMinutes! < 10 && recordSeconds! < 10 {
-            return "\(recordCount!) Ходов\n 0\(recordMinutes!):0\(recordSeconds!)"
-        }
-        else if recordMinutes! < 10 && recordSeconds! >= 10 {
-            return "\(recordCount!) Ходов\n 0\(recordMinutes!):\(recordSeconds!)"
-        }
-        else if recordMinutes! >= 10 && recordSeconds! < 10 {
-            return "\(recordCount!) Ходов\n \(recordMinutes!):0\(recordSeconds!)"
-        }
-        return "\(recordCount!) Ходов\n \(recordMinutes!):\(recordSeconds!)"
+        globalScore?.font = UIFont(name: "Marker Felt Wide", size: 17)
+        let textTimeRecords = TimeManager.shared.convertToMinutes(seconds: recordSeconds!)
+        return "\(recordCount!) Ходов\n \(textTimeRecords)"
     }
     
     func presentCount() {
